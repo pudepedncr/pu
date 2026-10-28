@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="refresh" content="0; url=Procurement/index.html">
     <title>Procurement Unit</title>
+    <style>
+        body{margin:0;font-family:"Poppins",Arial,sans-serif}
+        #site-loader{position:fixed;inset:0;display:grid;place-items:center;background:#fff8f0;color:#1a1a1a}
+        .site-loader-content{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px}
+        .site-loader-mark{position:relative;display:grid;place-items:center;width:92px;height:92px;margin-bottom:20px}
+        .site-loader-mark:before{content:"";position:absolute;inset:0;border:3px solid rgba(106,155,169,.18);border-top-color:#6a9ba9;border-right-color:#f6a623;border-radius:50%;animation:site-loader-spin 1.2s linear infinite}
+        .site-loader-mark img{width:60px;height:60px;object-fit:contain}
+        .site-loader-title{margin:0;font-family:"Playfair Display",Georgia,serif;font-size:1.45rem;font-weight:700;color:#1a1a1a}
+        .site-loader-message{margin:7px 0 0;font-size:.82rem;letter-spacing:.04em;color:#6a9ba9}
+        .site-loader-fallback{margin:20px 0 0;font-size:.8rem;color:#666}
+        .site-loader-fallback a{color:#2d6a4f}
+        @keyframes site-loader-spin{to{transform:rotate(360deg)}}
+        @media(prefers-reduced-motion:reduce){.site-loader-mark:before{animation:none}}
+    </style>
 </head>
 <body>
-    <p>Opening the Procurement Unit website. If you are not redirected, <a href="Procurement/index.html">open the website</a>.</p>
+    <div id="site-loader" role="status" aria-live="polite" aria-label="Opening the Procurement Unit website">
+        <div class="site-loader-content">
+            <div class="site-loader-mark"><img src="Procurement/img/pulogo.png" alt=""></div>
+            <p class="site-loader-title">Procurement Unit</p>
+            <p class="site-loader-message">Loading your experience...</p>
+            <p class="site-loader-fallback">If you are not redirected, <a href="Procurement/index.html">open the website</a>.</p>
+        </div>
+    </div>
 </body>
 </html>

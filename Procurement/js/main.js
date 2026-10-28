@@ -10,7 +10,7 @@ function initializeTeamSlider(selector, paginationSelector, paginationType) {
         spaceBetween: 18,
         loop: true,
         autoplay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {
-            delay: 4000,
+            delay: 3000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true
         },
@@ -81,11 +81,16 @@ window.addEventListener('scroll', function() {
         var top = sec.offsetTop - 110,
             bot = top + sec.offsetHeight;
         if (window.scrollY >= top && window.scrollY < bot) {
-            document.querySelectorAll('.nav-link').forEach(function(l) {
-                l.classList.remove('active');
-            });
-            var lnk = document.querySelector('.nav-link[href="#' + sec.id + '"]');
-            if (lnk) lnk.classList.add('active');
+            var selector = sec.id === 'category' ?
+                '#navmenu .navbar-nav .nav-link[href="providers.html"]' :
+                '#navmenu .navbar-nav .nav-link[href="#' + sec.id + '"]';
+            var lnk = document.querySelector(selector);
+            if (lnk) {
+                document.querySelectorAll('#navmenu .navbar-nav .nav-link').forEach(function(l) {
+                    l.classList.remove('active');
+                });
+                lnk.classList.add('active');
+            }
         }
     });
 });

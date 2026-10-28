@@ -73,6 +73,7 @@ img {
 #topbar .tsoc .top-social-placeholder {
   width: 27px;
   height: 27px;
+  vertical-align: middle;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   display: inline-flex;
@@ -90,6 +91,19 @@ img {
   margin-right: 0;
   color: #bbb;
   font-size: 0.75rem;
+}
+#topbar .tsoc a.top-feedback-link {
+  width: auto;
+  padding: 0 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #bbb;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+#topbar .tsoc a.top-feedback-link:hover {
+  background: var(--primary);
 }
 #topbar .tsoc .top-social-placeholder i {
   margin-right: 0;
@@ -1426,17 +1440,33 @@ footer {
   font-size: 0.88rem;
   transition: 0.3s;
 }
+.fsoc a.footer-feedback-link {
+  width: auto;
+  padding: 0 13px;
+  background: rgba(106, 155, 169, 0.18);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
 .fsoc a:hover,
 .fsoc .footer-social-placeholder:hover {
   background: var(--primary);
   color: #fff;
   transform: translateY(-3px);
 }
+.fsoc a.footer-feedback-link:hover {
+  background: var(--primary);
+}
 .fsoc .footer-social-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: default;
+  order: 1;
+}
+.fsoc a.footer-feedback-link {
+  order: 2;
 }
 .fsoc .footer-social-placeholder svg {
   width: 19px;
